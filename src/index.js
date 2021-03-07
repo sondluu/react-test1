@@ -17,7 +17,7 @@ ReactDOM.render(
 
   <React.StrictMode>
     {/* <React.Fragment> */}
-    <App />
+    <App authorized={true}/>,
     {/* <AppTwo /> */}
     {/* </React.Fragment> */}
   </React.StrictMode>,
