@@ -11,12 +11,12 @@ function RegularComponent(){
   return <h1>Everyone can see this information</h1>
 }
 
-function App(props) {
-  if(props.authorized) {
-    return <SecretComponent />;
-  }else {
-    return <RegularComponent />;
-  }
-  }
+function App({authorized}) {
+  return (
+    <>
+    {authorized ? (<SecretComponent />) : (<RegularComponent />)}
+    </>
+  );
+}
 
 export default App;

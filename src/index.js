@@ -11,6 +11,10 @@ import reportWebVitals from './reportWebVitals';
 
 
 
+const [mostImportantFeatures, second] = ["calorie", "step count", "exercise"];
+console.log(mostImportantFeatures, second);
+
+
 ReactDOM.render(
 
   // React.createElement("h", null, "hello"),
