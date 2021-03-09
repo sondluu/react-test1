@@ -10,10 +10,12 @@ function App() {
 
 
   function toggle() {
-    setChecked(checked => !checked);
+    setChecked(checked => !checked); //this can be called a "reducer"
   }
 
-
+//a reducer function's definition is it takes in the current state ad returns
+//a new state. In this partcular case, if "checked" is false then returns the opposit which is true
+ 
 
   return (
     <>
