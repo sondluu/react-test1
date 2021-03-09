@@ -11,8 +11,7 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-const [mostImportantFeatures, second] = ["calorie", "step count", "exercise"];
-console.log(mostImportantFeatures, second);
+
 
 
 ReactDOM.render(
@@ -21,7 +20,7 @@ ReactDOM.render(
 
   <React.StrictMode>
     {/* <React.Fragment> */}
-    <App authorized={false}/>,
+    <App login="sondluu" />,
     {/* <AppTwo /> */}
     {/* </React.Fragment> */}
   </React.StrictMode>,

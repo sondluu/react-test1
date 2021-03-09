@@ -1,29 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useReducer } from "react";
+import React, { useState, useEffect } from "react";
 
 
+//https://api.github.com/users/sondluu
 
+function App({ login }) { 
+  const [data, setData] = useState(null); //sending initial state of null due to no data upon app loading
 
-function App() { 
-  const [checked, toggle] = useReducer( //pass the function toggle which is the update function inside the [] 
-    (checked) => !checked, //useReducer takes in 2 arguments, the first if the reducer function
-    false //second arguent is the original state
-  );
+  //next useEffect takes in a callback function
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${login}`)  //re-structuring the link to include a way to log in 
+      .then(response => response.json())
+      .then(setData);
+  }, []); //passing in an empty array b/c we ony want to fetch data when the component renders
 
+  if(data) {
+    return <div>{JSON.stringify(data)}</div> //stringify the data.
+  }
 
-//a reducer function's definition is it takes in the current state ad returns
-//a new state. In this partcular case, if "checked" is false then returns the opposit which is true
-
-
-  return (
-    <>
-      <input  type="checkbox" 
-              value={checked} 
-              onChange={toggle}
-      />
-      <p>{checked ? "checked" : "not checked"}</p>
-    </>
+  return ( //the div below is for parsing data coming back from api
+    <div>No user data available </div>
   );
 }
 
