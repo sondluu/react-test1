@@ -11,12 +11,18 @@ function App({ login }) {
   //next useEffect takes in a callback function
   useEffect(() => {
     fetch(`https://api.github.com/users/${login}`)  //re-structuring the link to include a way to log in 
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(setData);
   }, []); //passing in an empty array b/c we ony want to fetch data when the component renders
 
-  if(data) {
-    return <div>{JSON.stringify(data)}</div> //stringify the data.
+  if (data) {
+    return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.location}</p>
+      <img alt={data.login} src={data.avatar_url} />
+    </div> //stringify the data.
+    );
   }
 
   return ( //the div below is for parsing data coming back from api
