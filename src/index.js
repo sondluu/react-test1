@@ -3,14 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-
-// function AppTwo() {
-//   return<h1>This is the second part</h1>
-// }
-
-
-
+import { BrowserRouter as Router } from "react-router-dom";
 
 
 
@@ -18,12 +11,13 @@ ReactDOM.render(
 
   // React.createElement("h", null, "hello"),
 
-  <React.StrictMode>
-    {/* <React.Fragment> */}
-    <App login="sondluu" />,
-    {/* <AppTwo /> */}
-    {/* </React.Fragment> */}
-  </React.StrictMode>,
+
+<Router>
+    <App />,
+
+    </Router>,
+ 
+
   document.getElementById('root')
 );
 
