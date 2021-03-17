@@ -12,10 +12,11 @@ ReactDOM.render(
   // React.createElement("h", null, "hello"),
 
 
+//below, wrapping the app inside the <Router> tag so that app can access all properties of the router: location, history ..
 <Router>
     <App />,
 
-    </Router>,
+</Router>,
  
 
   document.getElementById('root')
